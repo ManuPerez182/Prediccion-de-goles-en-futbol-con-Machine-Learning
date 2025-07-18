@@ -1,0 +1,34 @@
+# Entorno virtual
+futbol-env/
+
+# Archivos de Python compilados
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Archivos de logs
+*.log
+
+# Modelos entrenados
+*.h5
+*.hdf5
+*.pkl
+*.joblib
+
+# Archivos temporales de Jupyter o VSCode
+.ipynb_checkpoints/
+.vscode/
+*.code-workspace
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# Datos temporales o de trabajo
+*.csv
+*.xlsx
+Dataset/
+
+# Carpetas ocultas de control
+.env
+.venv
