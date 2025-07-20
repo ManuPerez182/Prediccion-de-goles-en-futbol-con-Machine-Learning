@@ -352,6 +352,9 @@ X_train_scaled = scaler.fit_transform(X_train)
 # Usar el mismo scaler para transformar el test
 X_test_scaled = scaler.transform(X_test)
 ```
+---
+# Modelado y entrenamiento
+
 ## Entrenamiento del modelo (Regresión Lineal)
 
 ### ¿Qué es la regresión lineal?
@@ -474,12 +477,12 @@ print("MAE:", mae)
 print("RMSE:", rmse)
 print("R²:", r2)
 ```
+---
+# Visualización y presentación
+
 ## Visualización de Resultados
 
 Una vez entrenado y evaluado el modelo con métricas numéricas, es importante **visualizar los resultados** para tener una mejor comprensión de su rendimiento. La visualización complementa los valores estadísticos y nos ayuda a detectar patrones o errores sistemáticos.
-
-![Predicción vs Realidad](grafico_predicciones_vs_reales.png)
-
 
 ### ¿Qué es `matplotlib`?
 
@@ -522,3 +525,53 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 ```
+
+## Análisis de Resultados y Conclusiones
+
+### Evaluación general del modelo
+
+El modelo de regresión fue entrenado para predecir la cantidad de goles anotados por el equipo local utilizando estadísticas previas al resultado (posesión, remates, tarjetas, faltas, etc.). A continuación se presentan las métricas obtenidas:
+
+- **MAE:** 0.71 → En promedio, el modelo se equivoca por ~0.71 goles.
+- **RMSE:** 0.91 → El error promedio ponderado (penalizando más los errores grandes) es menor a 1 gol.
+- **R²:** 0.57 → El modelo explica el **57%** de la variabilidad en los goles anotados.
+
+Estas métricas indican que el modelo logra capturar una parte significativa del comportamiento del target, aunque todavía queda margen de mejora.
+
+### Precisión de las predicciones
+
+Analizamos el margen de error en las predicciones para clasificar su precisión:
+
+| Categoría                       | Criterio                  | Porcentaje |
+|--------------------------------|---------------------------|------------|
+| Predicción exacta           | Error = 0                 | 0.00%      |
+| Error moderado              | Error ≤ 1 gol             | 79.80%     |
+| Error grande                | Error > 1 gol             | 20.20%     |
+
+El **80% de las predicciones están dentro de un margen razonable (≤ 1 gol)**, lo cual es un resultado positivo para un modelo sencillo, sin ajustes avanzados.
+
+
+### Interpretación del gráfico
+
+![Predicción vs Realidad](grafico_predicciones_vs_reales.png)
+
+- **Eje X:** Goles reales del equipo local.
+- **Eje Y:** Goles predichos por el modelo.
+- **Línea negra (y = x):** Representa la predicción perfecta.
+- **Colores:**
+  - Azul: Predicción con error ≤ 1 gol (moderada).
+  - Rojo: Predicción con error > 1 gol (grande).
+
+Como puede verse, la mayoría de los puntos están cerca de la línea negra, aunque el modelo tiende a **subestimar ligeramente los goles** cuando son altos, y a **sobrestimarlos cuando son bajos**. Esto es una señal de que el modelo **no captura completamente los extremos** del target (goles muy altos o muy bajos).
+
+### Conclusiones
+
+- El modelo presenta un rendimiento **razonable para un primer enfoque básico**, utilizando regresión lineal con datos crudos y sin ajuste fino.
+- No logra predicciones exactas, pero tiene **un error promedio bajo y buena cobertura general**.
+- El desempeño podría mejorar aplicando:
+  - Técnicas de **feature engineering** más sofisticadas.
+  - **Modelos no lineales** como árboles de decisión, Random Forest o redes neuronales.
+  - **Ajustes de hiperparámetros** o técnicas de regularización.
+  - Más datos (por ejemplo, estadísticas individuales, localía real, ranking FIFA, etc.).
+
+ **Este proyecto representa una excelente introducción práctica al aprendizaje automático supervisado con regresión.** Fue desarrollado con el objetivo de aprender haciendo, y demuestra habilidades en análisis de datos, preprocesamiento, entrenamiento de modelos y evaluación de resultados.
