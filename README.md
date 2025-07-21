@@ -1,4 +1,4 @@
-# ⚽ Predicción de Goles en Partidos de Fútbol (FIFA World Cup)
+# Predicción de Goles en Partidos de Fútbol (FIFA World Cup)
 
 Este proyecto consiste en desarrollar un modelo de Machine Learning capaz de **predecir la cantidad de goles del equipo local** en un partido de fútbol, utilizando estadísticas reales de encuentros anteriores de la Copa Mundial de la FIFA.
 
@@ -31,10 +31,6 @@ Se emplea un enfoque de **aprendizaje supervisado con regresión**, entrenando a
 
 Este proyecto busca no solo aplicar técnicas de ML sobre datos deportivos reales, sino también ser una prueba práctica de conocimientos en programación, análisis de datos y aprendizaje automático.
 
----
-
-# Machine Learning
-
 **Machine Learning (ML)** es una rama de la inteligencia artificial que permite a las computadoras aprender de los datos y hacer predicciones o tomar decisiones sin estar programadas explícitamente para cada caso.
 
 Existen varios tipos de aprendizaje automático, entre los más comunes están:
@@ -49,6 +45,27 @@ Existen varios tipos de aprendizaje automático, entre los más comunes están:
 
 Este proyecto utiliza **aprendizaje supervisado** con un modelo de **regresión**, ya que buscamos predecir un valor numérico continuo: la cantidad de goles que hará el equipo local en un partido de fútbol, a partir de estadísticas del encuentro.
 
+---
+
+# Indice
+- [Setup del entorno de desarrollo](#setup-del-entorno-de-desarrollo)
+  - [Instalación de Python](#instalación-de-python)
+  - [Entorno virtual](#entorno-virtual)
+  - [Instalación de librerías](#instalación-de-librerías)
+  - [Configuración de Git y GitHub](#configuración-de-git-y-github)
+  - [Archivo .gitignore](#archivo-gitignore)
+- [Preprocesamiento y preparación de los datos](#preprocesamiento-y-preparación-de-los-datos)
+  - [Carga y exploración inicial del dataset](#carga-y-exploración-inicial-del-dataset)
+  - [Selección y limpieza de datos](#selección-y-limpieza-de-datos)
+  - [Separación en features y target](#separación-en-features-y-target)
+  - [Separación en conjunto de entrenamiento y prueba](#separación-en-conjunto-de-entrenamiento-y-prueba)
+  - [Escalado de características (normalización)](#escalado-de-características-normalización)
+- [Modelado y entrenamiento](#modelado-y-entrenamiento)
+  - [Entrenamiento del modelo (Regresión Lineal)](#entrenamiento-del-modelo-regresión-lineal)
+  - [Evaluación del Modelo](#evaluación-del-modelo)
+- [Visualización y presentación](#visualización-y-presentación)
+  - [Visualización de Resultados](#visualización-de-resultados)
+  - [Análisis de Resultados y Conclusiones](#análisis-de-resultados-y-conclusiones)
 ---
 # Setup del entorno de desarrollo
 
