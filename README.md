@@ -16,18 +16,18 @@ Se emplea un enfoque de **aprendizaje supervisado con regresión**, entrenando a
 |--------------------|----------------------------------------------------------------------|
 | **Python**         | Lenguaje principal del desarrollo                                    |
 | **pandas**         | Carga, limpieza y análisis de datos en formato tabular               |
-| **scikit-learn**   | Separación de datos, entrenamiento del modelo, evaluación de métricas|
-| **TensorFlow**     | Entrenamiento de modelos más complejos (redes neuronales)            |
+| **scikit-learn**   | Separación de datos, entrenamiento del modelo, evaluación de métricas |
 | **matplotlib**     | Visualización de resultados y métricas                               |
 
 ## Metodología
 
 - **Regresión supervisada**: el modelo predice un valor numérico continuo (goles).
 - **Normalización de datos**: para escalar las variables y mejorar el rendimiento del modelo.
-- **Red neuronal básica**: construida con TensorFlow y entrenada para ajustar los datos.
+- **Regresion lineal múltiple**: modelo simple entrenado con `scikit-learn` para encontrar patrones en las estadisticas.
 - **Métricas de evaluación**:
   - **MAE (Mean Absolute Error)**: error promedio entre los valores reales y los predichos.
   - **RMSE (Root Mean Squared Error)**: penaliza errores grandes, útil para evaluar precisión.
+  - **R^2(coeficiente de determinacion)**: mide que tanto del comportamiento real logra explicar el modelo.
 
 Este proyecto busca no solo aplicar técnicas de ML sobre datos deportivos reales, sino también ser una prueba práctica de conocimientos en programación, análisis de datos y aprendizaje automático.
 
@@ -103,7 +103,7 @@ Nota: Cada vez que vuelvo a trabajar en el proyecto, debo reactivar el entorno c
 ## Instalación de librerías
 Con el entorno virtual activado, instalé las librerías necesarias para trabajar con análisis de datos, visualización, Machine Learning y redes neuronales:
 ```bash
-pip install pandas numpy matplotlib seaborn scikit-learn tensorflow
+pip install pandas numpy matplotlib seaborn scikit-learn
 ```
 Luego guardé esas dependencias en un archivo para que cualquier persona pueda instalarlas fácilmente:
 ```bash
